@@ -37,3 +37,9 @@ Examples:
 
 
 // Solution
+
+function solve(files) {
+  let total = files.map(file => file.match(/\.\w+$/)[0]).reduce((acc,cur) => (acc[cur] = (acc[cur]||0) + 1, acc), {});
+  let max = Math.max(...Object.values(total));
+  return Object.keys(total).sort().filter(key => total[key] == max);
+}
