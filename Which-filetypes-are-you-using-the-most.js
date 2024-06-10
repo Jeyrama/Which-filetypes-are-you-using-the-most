@@ -43,3 +43,5 @@ function solve(files) {
   let max = Math.max(...Object.values(total));
   return Object.keys(total).sort().filter(key => total[key] == max);
 }
+
+// or
