@@ -45,3 +45,24 @@ function solve(files) {
 }
 
 // or
+
+function solve(files) {
+  const map = new Map()
+  let mostCommon = []
+  let maxCount = 0
+
+  files.forEach(file => {
+    const extension = file.substring(file.lastIndexOf('.'))
+    const count = (map.get(extension) || 0) + 1
+    
+    map.set(extension, count)
+    
+    if (maxCount < count) {
+        maxCount = count
+        mostCommon = [extension]
+    } else if (maxCount == count)
+        mostCommon.push(extension)
+  })
+  mostCommon.sort()
+  return mostCommon
+}
