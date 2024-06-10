@@ -34,3 +34,6 @@ Examples:
   would return ['.mp3'], because it appears more times then any other extension, 
   and no other extension has an equal amount of appearences.
 */
+
+
+// Solution
